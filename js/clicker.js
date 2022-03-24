@@ -107,17 +107,17 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Fin sop',
+        name: 'Slipa Diamanten',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Spade',
+        name: 'Putsa Diamanten',
         cost: 100,
         amount: 10,
     },
     {
-        name: 'Hjälpreda',
+        name: 'Polera Diamanten',
         cost: 1000,
         amount: 100,
     },

@@ -87,10 +87,14 @@ select {
  * Genom att sätta en font på body elementet så används fonten på hela sidan.
  */
 body {
+    background-image: url('../img/fruits.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
-    background-color: #f8f8f8;
-    color: #121212;
+    background-color: orange;
+    color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 /* För att göra footern sticky så har vi flex på bodyn och då räcker det med 
@@ -132,6 +136,11 @@ footer {
  * Vi gömmer headern på mobil för att spara plats och vänder på spelet så att 
  * knappen blir överst på sidan.
  */
+
+.center {
+    text-align: center;
+}
+
 @media (max-width: 36rem) {
    header {
        display: none;
@@ -168,8 +177,8 @@ footer {
 
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #click {
-    width: 8rem;
-    height: 8rem;
+    width: 12rem;
+    height: 12rem;
     font-size: 2rem;
 }
 
@@ -202,7 +211,7 @@ footer {
 
 .achievement {
     color: #121212;
-    background-color: rebeccapurple;
+    background-color: rgb(121, 4, 238);
 }
 
 /* dessa kort används för spelets uppgraderingar 
@@ -213,7 +222,6 @@ footer {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    border: 1px solid #646464;
     margin: 0.5rem 0;
     padding: 1rem 0.5rem;
 }
