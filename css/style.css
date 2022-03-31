@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -20,6 +24,10 @@ dl,
 dd {
     margin: 0;
     padding: 0;
+}
+
+header {
+    margin-top: 2rem;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -87,7 +95,7 @@ select {
  * Genom att sätta en font på body elementet så används fonten på hela sidan.
  */
 body {
-    background-image: url('../img/fruits.jpg');
+    background-image: url('../img/');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -117,6 +125,17 @@ footer {
     padding-right: 1rem;
     width: 100%;
 }
+
+.container2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.rem {
+    margin-top: 2rem;
+}
+
 @media (min-width: 36rem) {
     .container {
         max-width: 34rem;
@@ -141,6 +160,10 @@ footer {
     text-align: center;
 }
 
+.border {
+    margin-left: 10rem;
+}
+
 @media (max-width: 36rem) {
    header {
        display: none;
@@ -161,7 +184,7 @@ footer {
     justify-content: center;
 }
 .game {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 /* flex och space between ordnar layouten för speldata och knappen på desktop */
@@ -175,10 +198,14 @@ footer {
     padding: 0;
 }
 
+.section {
+    display: -webkit-flex;
+}
+
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #click {
-    width: 12rem;
-    height: 12rem;
+    width: 16rem;
+    height: 16rem;
     font-size: 2rem;
 }
 
@@ -203,13 +230,16 @@ footer {
  */
 .warning {
     background-color: palevioletred;
+    text-align: center;
 }
 
 .success {
     background-color: mediumspringgreen;
+    text-align: center;
 }
 
 .achievement {
+    text-align: center;
     color: #121212;
     background-color: rgb(121, 4, 238);
 }
@@ -226,12 +256,28 @@ footer {
     padding: 1rem 0.5rem;
 }
 
-.card:hover {
-    background-color: #dfdfdf;
-}
 /* klassen används på kortets titel, font-weight: 600 gör fonten fetare, en normal
  * font vikt är oftast 400
  */
 .title {
     font-weight: 600;
 }
+
+.card {
+    background: lighten(red, 3%);  
+    border: 1px solid darken(red, 4%);
+    box-shadow: 0px 2px 0 darken(red, 5%), 2px 4px 6px darken(red, 2%);
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 150ms linear;
+  }
+  
+  .card:hover {
+    background: darken(red, 1.5%);
+    border: 1px solid rgba(#000, .05);
+    box-shadow: 1px 1px 2px rgba(#fff, .2);
+    color: lighten(red, 18%); 
+    text-decoration: none;
+    text-shadow: -1px -1px 0 darken(red, 9.5%);
+    transition: all 250ms linear;
+  }

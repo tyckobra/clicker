@@ -73,7 +73,7 @@ function step(timestamp) {
     // på samma sätt kan du även dölja uppgraderingar som inte kan köpas
     if (moneyPerClick == 10 && !achievementTest) {
         achievementTest = true;
-        message('Du har hittat en FOSSIL!', 'achievement');
+        message('Din diamant har börjat glänsa!', 'achievement');
     }
 
     window.requestAnimationFrame(step);
@@ -106,6 +106,11 @@ window.addEventListener('load', (event) => {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
  */
 upgrades = [
+    {
+        name: 'Mer bling',
+        cost: 50,
+        clicks: 2,
+    },
     {
         name: 'Slipa Diamanten',
         cost: 10,
@@ -147,18 +152,22 @@ function createCard(upgrade) {
     const header = document.createElement('p');
     header.classList.add('title');
     const cost = document.createElement('p');
-
+    if (upgrade.amount) {
     header.textContent = `${upgrade.name}, +${upgrade.amount} per sekund.`;
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    } else {
+        header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
+    }
+    cost.textContent = `Köp för ${upgrade.cost} bling.`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
             upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
-            moneyPerSecond += upgrade.amount;
-            message('Grattis du har lockat till dig fler besökare!', 'success');
+            cost.textContent = 'Köp för ' + upgrade.cost + ' bling';
+            moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
+            moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
+            message('Du har blingat diamanten', 'success');
         } else {
             message('Du har inte råd.', 'warning');
         }
