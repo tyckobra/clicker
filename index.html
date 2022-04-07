@@ -5,29 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>DiamantBling</title>
 </head>
 
 <body>
     <main>
-        <header class="container2 center">
+        <header class="container center">
             <h1>DiamantBling</h1>
-            <p class="rem">Med entusiasm och bara händer ger du dig ut i jakten på fossil till ditt museum.</p>
-            <p>Värva hjälpredor och gräv dig till nya upptäckter.</p>
-            <p>Hur många besökare kan du få?</p>
+            <p class="rem">Diamanten behöver snyggas till!</p>
+            <p>Slipa, putsa, polera diamanten så mycket du kan och samla bling!</p>
+            <p>Hur blank kan din diamant bli och hur mycket bling kan du tjäna?</p>
         </header>
+        <div class="rem left">
+            <h2>Uppgraderingar</h2>
+        </div>
         <section class="game section">
             <div class="game-hud">
-                </div>
-            <div class="w-100 container border">
-                <h1>Uppgraderingar</h1>
+            </div>
+            <div class="w-100 container righty left">
                 <div id="upgradelist"></div>
             </div>
-            <div class="game-button center container">
-                <button id="click">
+            
+            <div class="game-button container2 righty">
+                <button id="click" class="hover">
                     <img src="img/diamond.png">
                 </button>
+            </div>
+            <div class="container2 lefto">
                 <ul class="game-currency">
                     <li class="item">
                         <p>Bling: <span id="money"></span></p>
@@ -45,7 +53,7 @@
     </main>
     <div id="msgbox"></div>
     <footer class="container center">
-        <p>Hjälp till att fixa fel och lägga till funktioner, 
+        <p>Hjälp till att fixa fel och lägga till funktioner,
             <a href="https://github.com/jensnti/clicker/issues">issues</a>
             eller
             <a href="https://github.com/jensnti/clicker/pulls">pull requests</a>.
@@ -54,4 +62,5 @@
 
     <script src="js/clicker.js"></script>
 </body>
+
 </html>

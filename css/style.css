@@ -101,9 +101,9 @@ body {
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
-    background-color: orange;
+    background-color: rgb(89, 151, 212);
     color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'McLaren', cursive;
 }
 /* För att göra footern sticky så har vi flex på bodyn och då räcker det med 
  * margin-top auto här.
@@ -129,7 +129,7 @@ footer {
 .container2 {
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 40%;
 }
 
 .rem {
@@ -160,8 +160,16 @@ footer {
     text-align: center;
 }
 
-.border {
-    margin-left: 10rem;
+.left {
+    margin-left: 8rem;
+}
+
+.right {
+    margin-right: 8rem;
+}
+
+.lefto {
+    margin-left: 1rem;
 }
 
 @media (max-width: 36rem) {
@@ -244,17 +252,21 @@ footer {
     background-color: rgb(121, 4, 238);
 }
 
+.lefty {
+    justify-content: left;
+    text-align: left;
+  }
+
+  .righty {
+      justify-content: right;
+      text-align: right;
+  }
+
 /* dessa kort används för spelets uppgraderingar 
  * lägg märke till padding och margin för att ge elementen lite luft och 
  * skapa en mer lättläst struktur
  */
-.card {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    margin: 0.5rem 0;
-    padding: 1rem 0.5rem;
-}
+
 
 /* klassen används på kortets titel, font-weight: 600 gör fonten fetare, en normal
  * font vikt är oftast 400
@@ -264,20 +276,87 @@ footer {
 }
 
 .card {
-    background: lighten(red, 3%);  
-    border: 1px solid darken(red, 4%);
-    box-shadow: 0px 2px 0 darken(red, 5%), 2px 4px 6px darken(red, 2%);
-    font-weight: 900;
-    letter-spacing: 1px;
-    transition: all 150ms linear;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        margin: 0.5rem 0;
+        padding: 1.4rem 0.5rem;
+    }
+  
+  .card:after {
+    left: -100%;
+    clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 300ms ease;
   }
   
-  .card:hover {
-    background: darken(red, 1.5%);
-    border: 1px solid rgba(#000, .05);
-    box-shadow: 1px 1px 2px rgba(#fff, .2);
-    color: lighten(red, 18%); 
-    text-decoration: none;
-    text-shadow: -1px -1px 0 darken(red, 9.5%);
-    transition: all 250ms linear;
+  .card:hover::after {
+    left: 100%;
   }
+      
+  .card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.8s ease;
+    position: relative;
+    border: 1px solid black;
+    margin: 0 40px;
+  }
+  
+  .card::before,
+  .card::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+
+
+
+
+
+  .hover {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    padding: 1.4rem 0.5rem;
+}
+
+.hover:after {
+left: -100%;
+clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+background-color: rgba(255, 255, 255, 0.6);
+transition: all 300ms ease;
+}
+
+.hover:hover::after {
+left: 100%;
+}
+  
+.hover {
+height: 100%;
+width: 100%;
+display: flex;
+align-items: center;
+transition: all 0.8s ease;
+position: relative;
+margin: 0 40px;
+}
+
+.hover::before,
+.hover::after {
+position: absolute;
+display: block;
+content: "";
+width: 100%;
+height: 100%;
+}
