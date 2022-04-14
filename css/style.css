@@ -302,7 +302,7 @@ footer {
     align-items: center;
     transition: all 0.8s ease;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     margin: 0 40px;
   }
   
@@ -323,9 +323,11 @@ footer {
 
 
   .hover {
+      background-color: transparent;
+      border: 1px solid white;
     overflow: hidden;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     cursor: pointer;
     margin: 0.5rem 0;
     padding: 1.4rem 0.5rem;
